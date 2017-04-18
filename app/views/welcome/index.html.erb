@@ -1,0 +1,4 @@
+<h1>Hot Reads</h1>
+<% @links.map do |link| %>
+  <p><%= link.url %> - <%= link.count %></p>
+<% end %>
