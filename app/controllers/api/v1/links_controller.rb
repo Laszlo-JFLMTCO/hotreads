@@ -1,4 +1,9 @@
 class Api::V1::LinksController < ApplicationController
+
+  def index
+    render json: Link.all.order(count: :desc).limit(10)
+  end
+
   def create
     input_url = link_params[:url]
     link = Link.find_by(url: input_url)
